@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nowPlaying_movie"
+        android:title="@string/menu_movie"
+        />
+    <item
+        android:id="@+id/genre_popular_movie"
+        android:title="@string/menu_gender"
+        />
+</menu>

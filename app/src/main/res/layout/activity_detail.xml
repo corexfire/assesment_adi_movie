@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:background="#E9E9E9"
+    tools:context=".detail.DetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/detail_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/detail_error_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Silakan periksa koneksi internet Anda!"
+            android:visibility="gone" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/detail_movie_poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter" />
+
+               <androidx.cardview.widget.CardView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="15dp"
+
+                   >
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:padding="10dp"
+                       android:orientation="vertical">
+
+                       <TextView
+                           android:id="@+id/detail_movie_title"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="movie"
+                           android:textAlignment="center"
+                           android:textColor="#000000"
+                           android:textSize="20sp"
+                           android:textStyle="bold" />
+
+                       <TextView
+                           android:id="@+id/detail_movie_tagline"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="5dp"
+                           android:layout_marginBottom="15dp"
+                           android:text="sub_title"
+                           android:textAlignment="center"
+                           android:textSize="16sp"
+                           android:textStyle="bold" />
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal"
+                           android:layout_marginBottom="15dp"
+                           >
+
+                           <ImageView
+                               android:layout_width="32dp"
+                               android:layout_height="32dp"
+                               android:src="@drawable/ic_charlie_chaplin" />
+
+                           <androidx.recyclerview.widget.RecyclerView
+                               android:layout_weight="1"
+                               android:layout_marginLeft="10dp"
+                               android:id="@+id/genre_recyclerView"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+                       </LinearLayout>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal"
+                           android:layout_marginBottom="15dp"
+                           >
+
+                           <ImageView
+                               android:layout_width="32dp"
+                               android:layout_height="32dp"
+                               android:src="@drawable/ic_flagpole" />
+                           <androidx.recyclerview.widget.RecyclerView
+                               android:layout_marginLeft="10dp"
+                               android:id="@+id/production_recyclerView"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+                       </LinearLayout>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal"
+                           android:layout_marginBottom="15dp"
+                           >
+
+                           <ImageView
+                               android:layout_width="32dp"
+                               android:layout_height="32dp"
+                               android:src="@drawable/ic_calendar" />
+
+                           <TextView
+                               android:id="@+id/detail_movie_release"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_marginLeft="10dp"
+                               android:text=""
+                               android:textColor="#000000"
+                               android:textSize="16sp" />
+                       </LinearLayout>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal"
+                           android:layout_marginBottom="15dp"
+                           >
+
+                           <ImageView
+                               android:layout_width="32dp"
+                               android:layout_height="32dp"
+                               android:src="@drawable/ic_bar_chart" />
+
+                           <TextView
+                               android:id="@+id/detail_movie_voteCount"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_marginLeft="10dp"
+                               android:text=""
+                               android:textColor="#000000"
+                               android:textSize="16sp" />
+                       </LinearLayout>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal"
+                           android:layout_marginBottom="15dp"
+                           >
+
+                           <ImageView
+                               android:layout_width="32dp"
+                               android:layout_height="32dp"
+                               android:src="@drawable/ic_star_filled" />
+
+                           <TextView
+                               android:id="@+id/detail_movie_rating"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_marginLeft="10dp"
+                               android:text=""
+                               android:textColor="#000000"
+                               android:textSize="16sp" />
+                       </LinearLayout>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal"
+                           android:layout_marginBottom="15dp"
+                           >
+
+                           <ImageView
+                               android:layout_width="32dp"
+                               android:layout_height="32dp"
+                               android:src="@drawable/ic_film_reel" />
+
+                           <TextView
+                               android:id="@+id/detail_movie_runtime"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_marginLeft="10dp"
+                               android:text=""
+                               android:textColor="#000000"
+                               android:textSize="16sp" />
+                       </LinearLayout>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal"
+                           android:layout_marginBottom="15dp"
+
+                           >
+
+                           <ImageView
+                               android:layout_width="32dp"
+                               android:layout_height="32dp"
+                               android:src="@drawable/ic_us_dollar" />
+
+                           <TextView
+                               android:id="@+id/detail_movie_budget"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_marginLeft="10dp"
+                               android:text=""
+                               android:textColor="#000000"
+                               android:textSize="16sp" />
+                       </LinearLayout>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal"
+                           android:layout_marginBottom="15dp"
+                           >
+
+                           <ImageView
+                               android:layout_width="32dp"
+                               android:layout_height="32dp"
+                               android:src="@drawable/ic_profit" />
+
+                           <TextView
+                               android:id="@+id/detail_movie_revenue"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_marginLeft="10dp"
+                               android:text=""
+                               android:textColor="#000000"
+                               android:textSize="16sp" />
+                       </LinearLayout>
+
+                   </LinearLayout>
+
+               </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal"
+                            >
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/ic_clapperboard" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:text="Overview"
+                                android:gravity="center_vertical"
+                                android:textColor="#000000"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/detail_movie_overview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="2dp"
+                            android:text="overview......"
+                            android:padding="10dp"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal"
+                            >
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/ic_youtube" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:text="Trailer"
+                                android:gravity="center_vertical"
+                                android:textColor="#000000"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/credits_recyclerView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"></androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal"
+                            >
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/ic_message_preview" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:text="Review"
+                                android:gravity="center_vertical"
+                                android:textColor="#000000"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/crew_recyclerView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"></androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
